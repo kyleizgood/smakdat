@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premier SEO Agency in Minneapolis-St. Paul | Tal Hub Smak Dat Team | Data-Driven SEO Solutions | Digital Marketing Experts | Proven Results | Call 612-924-3004">
+    <meta name="keywords" content="SEO agency Minneapolis, digital marketing experts, SEO services Minnesota, search engine optimization, content marketing, technical SEO, local SEO, SEO consulting">
+    <title>Tal Hub Smak Dat Team - Leading SEO Agency in Minneapolis-St. Paul</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #ec4899;
+            --accent-color: #8b5cf6;
+            --text-color: #f8fafc;
+            --light-bg: rgba(255, 255, 255, 0.1);
+            --gradient-start: #6366f1;
+            --gradient-end: #ec4899;
+            --dark-bg: rgba(3, 7, 18, 0.95);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #030712, #1e1b4b);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(3, 7, 18, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.transparent {
+            background: rgba(3, 7, 18, 0.5);
+        }
+
+        .top-bar {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 12px 5%;
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.95rem;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            background: var(--glass-bg);
+        }
+
+        .cta-button-small {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white !important;
+            padding: 10px 24px !important;
+            border-radius: 25px !important;
+            font-weight: 600 !important;
+        }
+
+        .cta-button-small:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color)) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            padding: 180px 5% 100px;
+            background: linear-gradient(135deg, rgba(3, 7, 18, 0.7), rgba(30, 27, 75, 0.7));
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/background.jpg') center/cover;
+            opacity: 0.6;
+            z-index: -1;
+            animation: zoomInOut 20s infinite alternate;
+        }
+
+        @keyframes zoomInOut {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 4em;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.4em;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 35px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, rgba(3, 7, 18, 0.95), rgba(30, 27, 75, 0.95));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-subtitle {
+            color: var(--primary-color);
+            font-size: 1.2em;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 2.8em;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #fff, rgba(255, 255, 255, 0.8));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-description {
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1em;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .team-member {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.4s ease;
+        }
+
+        .team-member:hover img {
+            transform: scale(1.05);
+        }
+
+        .team-member-info {
+            padding: 2rem;
+        }
+
+        .team-member-info h3 {
+            color: var(--text-color);
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .team-member-info p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .member-specialty {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(99, 102, 241, 0.2);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 0.5rem 0;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+
+        .member-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .member-stat {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .member-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .member-tag {
+            padding: 0.3rem 0.8rem;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 15px;
+            font-size: 0.85em;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .team-member-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .team-member-social a {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.3em;
+            transition: all 0.3s;
+        }
+
+        .team-member-social a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Add decorative elements */
+        .team-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .team-section::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.1) 0%, transparent 60%);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: linear-gradient(135deg, #1a1f36 0%, #111827 100%);
+            color: white;
+            padding: 80px 5% 30px;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.4em;
+            position: relative;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-section ul li i {
+            color: var(--primary-color);
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5em;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .team-member-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .team-member-link:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-member-social {
+            position: relative;
+            z-index: 2;
+        }
+
+        .team-member-social a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
+            transition: all 0.3s;
+        }
+
+        .team-member-social a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Add these new styles */
+        .stats-bar {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .member-specialty {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--light-bg);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 0.5rem 0;
+        }
+
+        .member-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .member-stat {
+            text-align: center;
+            padding: 1rem;
+            background: var(--light-bg);
+            border-radius: 10px;
+        }
+
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .member-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .member-tag {
+            padding: 0.3rem 0.8rem;
+            background: var(--light-bg);
+            border-radius: 15px;
+            font-size: 0.85em;
+            color: var(--text-color);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 5px;
+            background: rgba(255,255,255,0.05);
+            color: white;
+        }
+
+        .newsletter-form button {
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--secondary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.05);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Blog Section Styles */
+        .blog-section {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 40px auto 0;
+            padding: 20px;
+        }
+
+        .blog-card {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-image {
+            position: relative;
+            padding-top: 60%;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .blog-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .blog-tag {
+            padding: 5px 12px;
+            background: rgba(99, 102, 241, 0.2);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+
+        .blog-content h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .blog-content p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 20px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .read-more:hover {
+            color: var(--secondary-color);
+            gap: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Services Section Styles */
+        .services-section {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, rgba(3, 7, 18, 0.95), rgba(30, 27, 75, 0.95));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pricing-card {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-card.featured {
+            border: 1px solid var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .package-header {
+            padding: 30px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .featured-tag {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .package-header h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .price {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: white;
+        }
+
+        .period {
+            font-size: 0.4em;
+            opacity: 0.8;
+        }
+
+        .package-features {
+            padding: 30px;
+            flex: 1;
+        }
+
+        .package-features h4 {
+            color: var(--primary-color);
+            margin: 20px 0 15px;
+            font-size: 1.1em;
+        }
+
+        .package-features ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .package-features li {
+            margin: 10px 0;
+            color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .package-features li i {
+            color: var(--primary-color);
+        }
+
+        .package-cta {
+            margin: 20px 30px 30px;
+            padding: 15px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .package-cta:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .package-cta.featured {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .package-cta.featured:hover {
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+        }
+
+        .services-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+            padding: 20px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .feature-card i {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .feature-card h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="contact-info">
+                <a href="tel:612-924-3004"><i class="fas fa-phone"></i> 612-924-3004</a>
+                <a href="mailto:Info@talhubsmakdat.com"><i class="fas fa-envelope"></i> Info@talhubsmakdat.com</a>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="logo">Tal Hub Smak Dat Team</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">SEO Services</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#team">Our Experts</a></li>
+                <li><a href="#blog">SEO Blog</a></li>
+                <li><a href="#contact" class="cta-button-small">Free SEO Audit</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-section" id="home">
+        <div class="hero-content">
+            <h1>Dominate Search Rankings with Data-Driven SEO</h1>
+            <p>Transform your online presence with our proven SEO strategies that deliver measurable results</p>
+            <a href="#contact" class="cta-button">Get Your Free SEO Audit</a>
+        </div>
+    </section>
+
+    <!-- SEO Services Section -->
+    <section class="services-section" id="services">
+        <div class="section-header">
+            <p class="section-subtitle">Our SEO Packages</p>
+            <h2 class="section-title">Choose Your SEO Strategy</h2>
+            <p class="section-description">Comprehensive SEO solutions tailored to your business needs</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Basic Package -->
+            <div class="pricing-card glass-card">
+                <div class="package-header">
+                    <h3>Basic</h3>
+                    <div class="price">
+                        <span class="amount">$800</span>
+                        <span class="period">/Year</span>
+                    </div>
+                </div>
+                <div class="package-features">
+                    <h4>Technical SEO</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> SEO Site Audit</li>
+                        <li><i class="fas fa-check"></i> Google Analytics Integration</li>
+                        <li><i class="fas fa-check"></i> Page Speed Optimization</li>
+                        <li><i class="fas fa-check"></i> Schema Implementation</li>
+                    </ul>
+                    
+                    <h4>Keyword Research</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 2 Primary Keywords</li>
+                        <li><i class="fas fa-check"></i> 3 Secondary Keywords</li>
+                    </ul>
+
+                    <h4>Local SEO</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> GMB Optimization</li>
+                        <li><i class="fas fa-check"></i> 150 Directory Listings</li>
+                        <li><i class="fas fa-check"></i> 150 Social Bookmarking</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="package-cta">Get Started</a>
+            </div>
+
+            <!-- Premium Package -->
+            <div class="pricing-card glass-card featured">
+                <div class="package-header">
+                    <div class="featured-tag">Most Popular</div>
+                    <h3>Premium</h3>
+                    <div class="price">
+                        <span class="amount">$1,400</span>
+                        <span class="period">/Year</span>
+                    </div>
+                </div>
+                <div class="package-features">
+                    <h4>Technical SEO</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Advanced SEO Site Audit</li>
+                        <li><i class="fas fa-check"></i> Enhanced Analytics Integration</li>
+                        <li><i class="fas fa-check"></i> Advanced Page Speed Optimization</li>
+                        <li><i class="fas fa-check"></i> Schema Implementation</li>
+                    </ul>
+                    
+                    <h4>Keyword Research</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 3 Primary Keywords</li>
+                        <li><i class="fas fa-check"></i> 5 Secondary Keywords</li>
+                    </ul>
+
+                    <h4>Local SEO</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Enhanced GMB Optimization</li>
+                        <li><i class="fas fa-check"></i> 200 Directory Listings</li>
+                        <li><i class="fas fa-check"></i> 200 Social Bookmarking</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="package-cta featured">Get Started</a>
+            </div>
+
+            <!-- Pro Package -->
+            <div class="pricing-card glass-card">
+                <div class="package-header">
+                    <h3>Pro</h3>
+                    <div class="price">
+                        <span class="amount">$2,600</span>
+                        <span class="period">/Year</span>
+                    </div>
+                </div>
+                <div class="package-features">
+                    <h4>Technical SEO</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Premium SEO Site Audit</li>
+                        <li><i class="fas fa-check"></i> Advanced Analytics & Reporting</li>
+                        <li><i class="fas fa-check"></i> Premium Speed Optimization</li>
+                        <li><i class="fas fa-check"></i> Advanced Schema Implementation</li>
+                    </ul>
+                    
+                    <h4>Keyword Research</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 4 Primary Keywords</li>
+                        <li><i class="fas fa-check"></i> 6 Secondary Keywords</li>
+                    </ul>
+
+                    <h4>Local SEO</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Premium GMB Optimization</li>
+                        <li><i class="fas fa-check"></i> 300 Directory Listings</li>
+                        <li><i class="fas fa-check"></i> 300 Social Bookmarking</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="package-cta">Get Started</a>
+            </div>
+
+            <!-- Ultimate Package -->
+            <div class="pricing-card glass-card">
+                <div class="package-header">
+                    <h3>Ultimate</h3>
+                    <div class="price">
+                        <span class="amount">$4,200</span>
+                        <span class="period">/Year</span>
+                    </div>
+                </div>
+                <div class="package-features">
+                    <h4>Technical SEO</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Enterprise SEO Site Audit</li>
+                        <li><i class="fas fa-check"></i> Enterprise Analytics Suite</li>
+                        <li><i class="fas fa-check"></i> Enterprise Speed Optimization</li>
+                        <li><i class="fas fa-check"></i> Custom Schema Implementation</li>
+                    </ul>
+                    
+                    <h4>Keyword Research</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 5 Primary Keywords</li>
+                        <li><i class="fas fa-check"></i> 8 Secondary Keywords</li>
+                    </ul>
+
+                    <h4>Local SEO</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Enterprise GMB Optimization</li>
+                        <li><i class="fas fa-check"></i> 500 Directory Listings</li>
+                        <li><i class="fas fa-check"></i> 500 Social Bookmarking</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="package-cta">Get Started</a>
+            </div>
+        </div>
+
+        <div class="services-features">
+            <div class="feature-card glass-card">
+                <i class="fas fa-cogs"></i>
+                <h4>Technical SEO</h4>
+                <p>Comprehensive site audits, analytics integration, speed optimization, and schema implementation for peak performance.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <i class="fas fa-search"></i>
+                <h4>Keyword Strategy</h4>
+                <p>Data-driven keyword research and implementation to target your ideal audience and improve rankings.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Local SEO</h4>
+                <p>Boost your local presence with GMB optimization, directory listings, and social bookmarking.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section" id="team">
+        <div class="section-header">
+            <p class="section-subtitle">Meet The Experts</p>
+            <h2 class="section-title">Our SEO Specialists</h2>
+            <p class="section-description">Work with our team of seasoned SEO professionals who bring years of experience and proven success in digital marketing and search engine optimization.</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                <a href="papart.html" class="team-member-link">
+                    <img src="images/team1.png" alt="Papart - SEO Specialist">
+                    <div class="team-member-info">
+                        <h3>Papart</h3>
+                        <p class="member-specialty">SEO Strategy Director</p>
+                        <p>With over 8 years of experience in search engine optimization, Papart has helped numerous businesses achieve top Google rankings and increase their organic traffic by 300% on average.</p>
+                        <div class="member-stats">
+                            <div class="member-stat">
+                                <div class="stat-value">300%</div>
+                                <div class="stat-label">Traffic Growth</div>
+                            </div>
+                            <div class="member-stat">
+                                <div class="stat-value">150+</div>
+                                <div class="stat-label">Projects</div>
+                            </div>
+                        </div>
+                        <div class="member-tags">
+                            <span class="member-tag">SEO Strategy</span>
+                            <span class="member-tag">Analytics</span>
+                            <span class="member-tag">Content Planning</span>
+                        </div>
+                        <div class="team-member-social">
+                            <a href="https://facebook.com/your-facebook-link" aria-label="Facebook Profile" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://linkedin.com/your-linkedin-link" aria-label="LinkedIn Profile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://twitter.com/your-twitter-link" aria-label="Twitter Profile" target="_blank"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                <a href="indian-tech-guy.html" class="team-member-link">
+                    <img src="images/team2.png" alt="Indian Tech Guy - Technical SEO Expert">
+                    <div class="team-member-info">
+                        <h3>Indian Tech Guy</h3>
+                        <p class="member-specialty">Technical SEO Specialist</p>
+                        <p>A master of technical SEO with expertise in site speed optimization, schema markup, and advanced SEO auditing. Specializes in fixing complex technical issues that impact search rankings.</p>
+                        <div class="member-stats">
+                            <div class="member-stat">
+                                <div class="stat-value">200%</div>
+                                <div class="stat-label">Speed Boost</div>
+                            </div>
+                            <div class="member-stat">
+                                <div class="stat-value">100+</div>
+                                <div class="stat-label">Audits</div>
+                            </div>
+                        </div>
+                        <div class="member-tags">
+                            <span class="member-tag">Technical SEO</span>
+                            <span class="member-tag">Site Speed</span>
+                            <span class="member-tag">Schema Markup</span>
+                        </div>
+                        <div class="team-member-social">
+                            <a href="https://facebook.com/your-facebook-link" aria-label="Facebook Profile" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://linkedin.com/your-linkedin-link" aria-label="LinkedIn Profile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://twitter.com/your-twitter-link" aria-label="Twitter Profile" target="_blank"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+                <a href="pareng-jon.html" class="team-member-link">
+                    <img src="images/team3.png" alt="Pareng Jon - Content Optimization Specialist">
+                    <div class="team-member-info">
+                        <h3>Pareng Jon</h3>
+                        <p class="member-specialty">Content & Link Building Strategist</p>
+                        <p>An expert in content optimization and link building strategies, Pareng Jon has helped clients build authoritative backlink profiles and create SEO-optimized content that ranks and converts.</p>
+                        <div class="member-stats">
+                            <div class="member-stat">
+                                <div class="stat-value">500+</div>
+                                <div class="stat-label">Backlinks</div>
+                            </div>
+                            <div class="member-stat">
+                                <div class="stat-value">1000+</div>
+                                <div class="stat-label">Articles</div>
+                            </div>
+                        </div>
+                        <div class="member-tags">
+                            <span class="member-tag">Content Strategy</span>
+                            <span class="member-tag">Link Building</span>
+                            <span class="member-tag">PR Outreach</span>
+                        </div>
+                        <div class="team-member-social">
+                            <a href="https://facebook.com/your-facebook-link" aria-label="Facebook Profile" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://linkedin.com/your-linkedin-link" aria-label="LinkedIn Profile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://twitter.com/your-twitter-link" aria-label="Twitter Profile" target="_blank"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats-bar">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Clients Worldwide</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">300%</div>
+                <div class="stat-label">Average ROI</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support Available</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Section -->
+    <section class="blog-section" id="blog">
+        <div class="section-header">
+            <p class="section-subtitle">Latest Insights</p>
+            <h2 class="section-title">SEO Blog & Resources</h2>
+            <p class="section-description">Stay updated with the latest SEO trends, strategies, and industry insights through our expert articles.</p>
+        </div>
+        <div class="blog-grid">
+            <article class="blog-card glass-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3" alt="SEO Strategy">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-tags">
+                        <span class="blog-tag">SEO Strategy</span>
+                        <span class="blog-tag">Analytics</span>
+                    </div>
+                    <h3>The Future of SEO: AI and Machine Learning Impact</h3>
+                    <p>Explore how artificial intelligence and machine learning are revolutionizing SEO strategies and search rankings in 2024.</p>
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> Mar 15, 2025</span>
+                        <span><i class="far fa-clock"></i> 8 min read</span>
+                    </div>
+                    <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-card glass-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3" alt="Technical SEO">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-tags">
+                        <span class="blog-tag">Technical SEO</span>
+                        <span class="blog-tag">Performance</span>
+                    </div>
+                    <h3>Core Web Vitals: The Complete Guide for 2024</h3>
+                    <p>Master the essential metrics that impact your website's search performance and user experience.</p>
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> Mar 12, 2024</span>
+                        <span><i class="far fa-clock"></i> 12 min read</span>
+                    </div>
+                    <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-card glass-card">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?ixlib=rb-4.0.3" alt="Content Strategy">
+                </div>
+                <div class="blog-content">
+                    <div class="blog-tags">
+                        <span class="blog-tag">Content</span>
+                        <span class="blog-tag">Strategy</span>
+                    </div>
+                    <h3>Content Optimization Techniques That Drive Traffic</h3>
+                    <p>Learn the proven content optimization methods that can increase your organic traffic by 200% or more.</p>
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> Mar 10, 2024</span>
+                        <span><i class="far fa-clock"></i> 10 min read</span>
+                    </div>
+                    <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Our SEO Services</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Technical SEO Audits</li>
+                    <li><i class="fas fa-check"></i> Content Optimization</li>
+                    <li><i class="fas fa-check"></i> Link Building</li>
+                    <li><i class="fas fa-check"></i> Local SEO</li>
+                    <li><i class="fas fa-check"></i> E-commerce SEO</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> Call Us: 612-924-3004</li>
+                    <li><i class="fas fa-envelope"></i> Email: Info@talhubsmakdat.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Z-6 4450, Talisay City, Cebu</li>
+                    <li><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">SEO Services</a></li>
+                    <li><a href="#case-studies">Case Studies</a></li>
+                    <li><a href="#blog">SEO Blog</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for SEO tips and updates.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tal Hub Smak Dat Team | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Initialize Swiper if needed
+        const swiper = new Swiper('.hero-slider', {
+            loop: true,
+            autoplay: {
+                delay: 5000,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header transparency on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('transparent');
+            } else {
+                header.classList.remove('transparent');
+            }
+        });
+    </script>
+</body>
+</html>
+
