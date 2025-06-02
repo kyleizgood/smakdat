@@ -253,7 +253,11 @@
             z-index: 2;
         }
 
+        /* Team Member Card Styles */
         .team-member {
+            height: 650px; /* Increased from 600px to 650px */
+            display: flex;
+            flex-direction: column;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -262,26 +266,39 @@
             transition: all 0.4s ease;
         }
 
-        .team-member:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            background: rgba(255, 255, 255, 0.1);
+        .team-member-link {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .team-member .member-image {
+            width: 100%;
+            height: 350px; /* Increased from 300px to 350px */
+            overflow: hidden;
+            position: relative;
         }
 
         .team-member img {
             width: 100%;
-            height: 350px;
-            object-fit: cover;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.4s ease;
-        }
-
-        .team-member:hover img {
-            transform: scale(1.05);
+            height: 100%;
+            object-fit: cover; /* This will ensure images cover the area without distortion */
+            transition: transform 0.5s;
         }
 
         .team-member-info {
-            padding: 2rem;
+            flex: 1;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .member-stats {
+            margin-top: auto; /* Push stats to bottom of info section */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 1rem 0;
         }
 
         .team-member-info h3 {
@@ -308,13 +325,6 @@
             font-size: 0.9em;
             margin: 0.5rem 0;
             border: 1px solid rgba(99, 102, 241, 0.3);
-        }
-
-        .member-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin: 1.5rem 0;
         }
 
         .member-stat {
@@ -950,9 +960,399 @@
                 transform: translateY(-10px);
             }
         }
+
+        /* Team Section Carousel Styles */
+        .team-carousel {
+            width: 100%;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .swiper-container {
+            width: 100%;
+            padding: 20px;
+        }
+
+        .swiper-slide {
+            transition: transform 0.3s;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: var(--primary-color);
+            background: rgba(255, 255, 255, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            backdrop-filter: blur(10px);
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 20px;
+        }
+
+        .swiper-pagination-bullet {
+            background: var(--primary-color);
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--secondary-color);
+        }
+
+        /* Hover effect for carousel slides */
+        .swiper-slide:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Interactive Animations and Effects */
+        .mouse-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.2s;
+            mix-blend-mode: difference;
+        }
+
+        .mouse-cursor-inner {
+            width: 8px;
+            height: 8px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s;
+            mix-blend-mode: difference;
+        }
+
+        /* Interactive Card Effects */
+        .team-member, .pricing-card, .blog-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .team-member:hover, .pricing-card:hover, .blog-card:hover {
+            transform: translateY(-10px) rotateX(2deg) rotateY(2deg);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+        }
+
+        /* Glowing Effect on Hover */
+        .cta-button:hover, .cta-button-small:hover {
+            animation: glowing 1.5s infinite;
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        @keyframes glowing {
+            0% { box-shadow: 0 0 5px var(--primary-color); }
+            50% { box-shadow: 0 0 20px var(--primary-color), 0 0 30px var(--secondary-color); }
+            100% { box-shadow: 0 0 5px var(--primary-color); }
+        }
+
+        /* Interactive Navigation */
+        .nav-links a {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Interactive Stats */
+        .stat-card, .member-stat {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .stat-card:hover, .member-stat:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Magnetic Social Links */
+        .social-link {
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px) scale(1.2);
+            color: var(--secondary-color);
+        }
+
+        /* Interactive Feature Cards */
+        .feature-card {
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 0;
+        }
+
+        .feature-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Particle Effect Background */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Smooth Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Interactive Blog Cards */
+        .blog-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .blog-card:hover .blog-image::after {
+            opacity: 0.3;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+        }
+
+        /* Team Leader Section Specific Styles */
+        .team-leader-image {
+            height: 450px; /* Increased from 400px to 450px */
+            max-width: 450px; /* Increased from 400px to 450px */
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .team-leader-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Maintain aspect ratio for GIF */
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Update the team leader container */
+        .team-grid .team-member:first-child {
+            max-width: 800px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .team-grid .team-member:first-child .member-image {
+            max-width: 300px;
+            max-height: 300px;
+            margin: 0 auto;
+        }
+
+        .team-grid .team-member:first-child img {
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Audio Player Styles */
+        .audio-player-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .audio-player-container:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .audio-control {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .audio-control:hover {
+            background: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .audio-info {
+            color: var(--text-color);
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .volume-control {
+            width: 80px;
+            height: 4px;
+            -webkit-appearance: none;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            outline: none;
+        }
+
+        .volume-control::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .volume-control::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            background: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .audio-player-container {
+                bottom: 10px;
+                right: 10px;
+                padding: 8px 15px;
+            }
+
+            .audio-info {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Remove any duplicate audio elements and update the audio implementation -->
+    <audio id="bgMusic" loop preload="auto" style="display: none;">
+        <source src="music/background-music.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Small initial play button that will disappear after click -->
+    <div id="initialPlayBtn" style="position: fixed; bottom: 20px; right: 20px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1000; transition: opacity 0.3s;">
+        <i class="fas fa-music" style="color: var(--text-color);"></i>
+    </div>
+
+    <script>
+        // Background Music Setup with multiple trigger points
+        document.addEventListener('DOMContentLoaded', function() {
+            const bgMusic = document.getElementById('bgMusic');
+            const initialPlayBtn = document.getElementById('initialPlayBtn');
+            
+            // Set initial volume
+            bgMusic.volume = 0.3;
+
+            // Function to start music
+            function startMusic() {
+                const playPromise = bgMusic.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        // Playback started successfully
+                        initialPlayBtn.style.opacity = '0';
+                        setTimeout(() => {
+                            initialPlayBtn.style.display = 'none';
+                        }, 300);
+                    }).catch(error => {
+                        // Auto-play was prevented
+                        console.log("Playback prevented:", error);
+                        // Keep the button visible if autoplay was prevented
+                        initialPlayBtn.style.opacity = '1';
+                    });
+                }
+            }
+
+            // Try to play on page load
+            startMusic();
+
+            // Try to play on first click anywhere on the page
+            document.addEventListener('click', function playOnFirstClick() {
+                startMusic();
+                document.removeEventListener('click', playOnFirstClick);
+            }, { once: true });
+
+            // Try to play when button is clicked
+            initialPlayBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                startMusic();
+            });
+
+            // Ensure music keeps playing
+            bgMusic.addEventListener('ended', function() {
+                this.currentTime = 0;
+                this.play();
+            });
+
+            // Log any errors for debugging
+            bgMusic.addEventListener('error', function(e) {
+                console.log('Audio error:', e);
+            });
+        });
+    </script>
+
     <header>
         <div class="top-bar">
             <div class="contact-info">
@@ -1156,9 +1556,11 @@
         <div class="team-grid" style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto 80px;">
             <div class="team-member" data-aos="fade-up" data-aos-delay="100">
                 <a href="team-leader.html" class="team-member-link">
-                    <img src="images/teamleader.png" alt="SEO Qpalyst - Team Leader">
+                    <div class="team-leader-image">
+                        <img src="images/gifteamleader.gif" alt="Chris Johny Sins - Team Leader">
+                    </div>
                     <div class="team-member-info">
-                        <h3>SEO Qpalyst</h3>
+                        <h3>Chris Johny Sins</h3>
                         <p class="member-specialty">Team Leader</p>
                         <p>A visionary leader with extensive experience in digital marketing and SEO strategy. Driving innovation and excellence while leading a high-performing team of SEO specialists.</p>
                         <div class="member-stats">
@@ -1176,11 +1578,6 @@
                             <span class="member-tag">Strategy</span>
                             <span class="member-tag">Innovation</span>
                         </div>
-                        <div class="team-member-social">
-                            <a href="#" aria-label="LinkedIn Profile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="Twitter Profile" target="_blank"><i class="fab fa-twitter"></i></a>
-                            <a href="#" aria-label="GitHub Profile" target="_blank"><i class="fab fa-github"></i></a>
-                        </div>
                     </div>
                 </a>
             </div>
@@ -1190,96 +1587,227 @@
         <div class="section-header">
             <h2 class="section-title" style="font-size: 3.5em; background: linear-gradient(45deg, #6366f1, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; letter-spacing: 2px; text-align: center; margin-bottom: 40px; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Our SEO Specialist Team</h2>
         </div>
-        <div class="team-grid" style="margin-top: 40px;">
-            <div class="team-member" data-aos="fade-up" data-aos-delay="100">
-                <a href="papart.html" class="team-member-link">
-                    <img src="images/team1.png" alt="Papart - SEO Specialist">
-                    <div class="team-member-info">
-                        <h3>Papart</h3>
-                        <p class="member-specialty">SEO Strategy Director</p>
-                        <p>With over 8 years of experience in search engine optimization, Papart has helped numerous businesses achieve top Google rankings and increase their organic traffic by 300% on average.</p>
-                        <div class="member-stats">
-                            <div class="member-stat">
-                                <div class="stat-value">300%</div>
-                                <div class="stat-label">Traffic Growth</div>
-                            </div>
-                            <div class="member-stat">
-                                <div class="stat-value">150+</div>
-                                <div class="stat-label">Projects</div>
-                            </div>
-                        </div>
-                        <div class="member-tags">
-                            <span class="member-tag">SEO Strategy</span>
-                            <span class="member-tag">Analytics</span>
-                            <span class="member-tag">Content Planning</span>
-                        </div>
-                        <div class="team-member-social">
-                            <a href="#" aria-label="Facebook Profile" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" aria-label="LinkedIn Profile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="Twitter Profile" target="_blank"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="team-member" data-aos="fade-up" data-aos-delay="200">
-                <a href="indian-tech-guy.html" class="team-member-link">
-                    <img src="images/team2.png" alt="Indian Tech Guy - Technical SEO Expert">
-                    <div class="team-member-info">
-                        <h3>Indian Tech Guy</h3>
-                        <p class="member-specialty">Technical SEO Specialist</p>
-                        <p>A master of technical SEO with expertise in site speed optimization, schema markup, and advanced SEO auditing. Specializes in fixing complex technical issues that impact search rankings.</p>
-                        <div class="member-stats">
-                            <div class="member-stat">
-                                <div class="stat-value">200%</div>
-                                <div class="stat-label">Speed Boost</div>
-                            </div>
-                            <div class="member-stat">
-                                <div class="stat-value">100+</div>
-                                <div class="stat-label">Audits</div>
-                            </div>
-                        </div>
-                        <div class="member-tags">
-                            <span class="member-tag">Technical SEO</span>
-                            <span class="member-tag">Site Speed</span>
-                            <span class="member-tag">Schema Markup</span>
-                        </div>
-                        <div class="team-member-social">
-                            <a href="#" aria-label="Facebook Profile" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" aria-label="LinkedIn Profile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="Twitter Profile" target="_blank"><i class="fab fa-twitter"></i></a>
+        
+        <div class="team-carousel">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Existing Team Members -->
+                    <div class="swiper-slide">
+                        <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                            <a href="papart.html" class="team-member-link">
+                                <div class="member-image">
+                                    <img src="images/team1.png" alt="Papart - SEO Strategy Director">
+                                </div>
+                                <div class="team-member-info">
+                                    <h3>Papart</h3>
+                                    <p class="member-specialty">SEO Strategy Director</p>
+                                    <p>A seasoned SEO strategist with 8+ years of experience in search engine optimization. Specializes in developing comprehensive SEO strategies that drive sustainable organic growth.</p>
+                                    <div class="member-stats">
+                                        <div class="member-stat">
+                                            <div class="stat-value">300%</div>
+                                            <div class="stat-label">Traffic Growth</div>
+                                        </div>
+                                        <div class="member-stat">
+                                            <div class="stat-value">150+</div>
+                                            <div class="stat-label">Projects</div>
+                                        </div>
+                                    </div>
+                                    <div class="member-tags">
+                                        <span class="member-tag">SEO Strategy</span>
+                                        <span class="member-tag">Analytics</span>
+                                        <span class="member-tag">Growth</span>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                </a>
-            </div>
-            <div class="team-member" data-aos="fade-up" data-aos-delay="300">
-                <a href="pareng-jon.html" class="team-member-link">
-                    <img src="images/team3.png" alt="Pareng Jon - Content Optimization Specialist">
-                    <div class="team-member-info">
-                        <h3>Pareng Jon</h3>
-                        <p class="member-specialty">Content & Link Building Strategist</p>
-                        <p>An expert in content optimization and link building strategies, Pareng Jon has helped clients build authoritative backlink profiles and create SEO-optimized content that ranks and converts.</p>
-                        <div class="member-stats">
-                            <div class="member-stat">
-                                <div class="stat-value">500+</div>
-                                <div class="stat-label">Backlinks</div>
-                            </div>
-                            <div class="member-stat">
-                                <div class="stat-value">1000+</div>
-                                <div class="stat-label">Articles</div>
-                            </div>
-                        </div>
-                        <div class="member-tags">
-                            <span class="member-tag">Content Strategy</span>
-                            <span class="member-tag">Link Building</span>
-                            <span class="member-tag">PR Outreach</span>
-                        </div>
-                        <div class="team-member-social">
-                            <a href="#" aria-label="Facebook Profile" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" aria-label="LinkedIn Profile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="Twitter Profile" target="_blank"><i class="fab fa-twitter"></i></a>
+
+                    <div class="swiper-slide">
+                        <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                            <a href="indian-tech-guy.html" class="team-member-link">
+                                <div class="member-image">
+                                    <img src="images/team2.png" alt="Indian Tech Guy - Technical SEO Expert">
+                                </div>
+                                <div class="team-member-info">
+                                    <h3>Indian Tech Guy</h3>
+                                    <p class="member-specialty">Technical SEO Expert</p>
+                                    <p>A technical SEO wizard with deep expertise in site architecture, speed optimization, and advanced schema implementation. Known for solving complex technical SEO challenges.</p>
+                                    <div class="member-stats">
+                                        <div class="member-stat">
+                                            <div class="stat-value">200%</div>
+                                            <div class="stat-label">Speed Boost</div>
+                                        </div>
+                                        <div class="member-stat">
+                                            <div class="stat-value">100+</div>
+                                            <div class="stat-label">Sites Optimized</div>
+                                        </div>
+                                    </div>
+                                    <div class="member-tags">
+                                        <span class="member-tag">Technical SEO</span>
+                                        <span class="member-tag">Performance</span>
+                                        <span class="member-tag">Schema</span>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                </a>
+
+                    <div class="swiper-slide">
+                        <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+                            <a href="pareng-jon.html" class="team-member-link">
+                                <div class="member-image">
+                                    <img src="images/team3.png" alt="Pareng Jon - Content & Link Building Strategist">
+                                </div>
+                                <div class="team-member-info">
+                                    <h3>Pareng Jon</h3>
+                                    <p class="member-specialty">Content & Link Building Strategist</p>
+                                    <p>Master of content optimization and link building with a proven track record in creating high-authority backlink profiles and engaging content strategies.</p>
+                                    <div class="member-stats">
+                                        <div class="member-stat">
+                                            <div class="stat-value">500+</div>
+                                            <div class="stat-label">Quality Backlinks</div>
+                                        </div>
+                                        <div class="member-stat">
+                                            <div class="stat-value">1000+</div>
+                                            <div class="stat-label">Articles</div>
+                                        </div>
+                                    </div>
+                                    <div class="member-tags">
+                                        <span class="member-tag">Link Building</span>
+                                        <span class="member-tag">Content</span>
+                                        <span class="member-tag">Outreach</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- New Team Members -->
+                    <div class="swiper-slide">
+                        <div class="team-member" data-aos="fade-up" data-aos-delay="400">
+                            <a href="sarah.html" class="team-member-link">
+                                <div class="member-image">
+                                    <img src="images/sarah.jpg" alt="Sarah - Marketing Specialist">
+                                </div>
+                                <div class="team-member-info">
+                                    <h3>Sarah</h3>
+                                    <p class="member-specialty">Digital Marketing Specialist</p>
+                                    <p>An innovative digital marketer who excels in creating integrated SEO and marketing campaigns. Expert in combining SEO with social media and content marketing strategies.</p>
+                                    <div class="member-stats">
+                                        <div class="member-stat">
+                                            <div class="stat-value">400%</div>
+                                            <div class="stat-label">ROI</div>
+                                        </div>
+                                        <div class="member-stat">
+                                            <div class="stat-value">75+</div>
+                                            <div class="stat-label">Campaigns</div>
+                                        </div>
+                                    </div>
+                                    <div class="member-tags">
+                                        <span class="member-tag">Digital Marketing</span>
+                                        <span class="member-tag">Social Media</span>
+                                        <span class="member-tag">ROI</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="team-member" data-aos="fade-up" data-aos-delay="500">
+                            <a href="mike.html" class="team-member-link">
+                                <div class="member-image">
+                                    <img src="images/mike.png" alt="Mike - Technical SEO Expert">
+                                </div>
+                                <div class="team-member-info">
+                                    <h3>Mike</h3>
+                                    <p class="member-specialty">Core Web Vitals Specialist</p>
+                                    <p>A performance optimization expert focused on Core Web Vitals and technical SEO excellence. Specializes in improving website speed and user experience metrics.</p>
+                                    <div class="member-stats">
+                                        <div class="member-stat">
+                                            <div class="stat-value">95%</div>
+                                            <div class="stat-label">Performance</div>
+                                        </div>
+                                        <div class="member-stat">
+                                            <div class="stat-value">120+</div>
+                                            <div class="stat-label">Sites Enhanced</div>
+                                        </div>
+                                    </div>
+                                    <div class="member-tags">
+                                        <span class="member-tag">Core Web Vitals</span>
+                                        <span class="member-tag">Speed</span>
+                                        <span class="member-tag">UX</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="team-member" data-aos="fade-up" data-aos-delay="600">
+                            <a href="lisa.html" class="team-member-link">
+                                <div class="member-image">
+                                    <img src="images/lisa.png" alt="Lisa - Content Strategist">
+                                </div>
+                                <div class="team-member-info">
+                                    <h3>Lisa</h3>
+                                    <p class="member-specialty">Content Strategy Expert</p>
+                                    <p>A content strategy virtuoso who transforms complex data into engaging, SEO-optimized content. Specializes in creating data-driven content that ranks and converts.</p>
+                                    <div class="member-stats">
+                                        <div class="member-stat">
+                                            <div class="stat-value">250%</div>
+                                            <div class="stat-label">Traffic Growth</div>
+                                        </div>
+                                        <div class="member-stat">
+                                            <div class="stat-value">800+</div>
+                                            <div class="stat-label">Articles</div>
+                                        </div>
+                                    </div>
+                                    <div class="member-tags">
+                                        <span class="member-tag">Content Strategy</span>
+                                        <span class="member-tag">SEO Writing</span>
+                                        <span class="member-tag">Analytics</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="team-member" data-aos="fade-up" data-aos-delay="700">
+                            <a href="alex.html" class="team-member-link">
+                                <div class="member-image">
+                                    <img src="images/alex.jpeg" alt="Alex - Analytics Specialist">
+                                </div>
+                                <div class="team-member-info">
+                                    <h3>Alex</h3>
+                                    <p class="member-specialty">Data Analytics Expert</p>
+                                    <p>A data-driven SEO analyst who excels in transforming complex analytics into actionable insights. Specializes in predictive SEO modeling and performance tracking.</p>
+                                    <div class="member-stats">
+                                        <div class="member-stat">
+                                            <div class="stat-value">85%</div>
+                                            <div class="stat-label">Prediction Accuracy</div>
+                                        </div>
+                                        <div class="member-stat">
+                                            <div class="stat-value">300+</div>
+                                            <div class="stat-label">Analysis Reports</div>
+                                        </div>
+                                    </div>
+                                    <div class="member-tags">
+                                        <span class="member-tag">Analytics</span>
+                                        <span class="member-tag">Data Science</span>
+                                        <span class="member-tag">Reporting</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
@@ -1432,37 +1960,238 @@
             once: true
         });
 
-        // Initialize Swiper if needed
-        const swiper = new Swiper('.hero-slider', {
+        // Initialize Swiper
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 30,
             loop: true,
+            centeredSlides: true,
             autoplay: {
-                delay: 5000,
+                delay: 3000,
+                disableOnInteraction: false,
             },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
             },
-        });
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Header transparency on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.classList.add('transparent');
-            } else {
-                header.classList.remove('transparent');
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
             }
         });
+    </script>
+
+    <!-- Add this before closing body tag -->
+    <div class="mouse-cursor"></div>
+    <div class="mouse-cursor-inner"></div>
+    <div id="particles-js"></div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize all interactive features
+        document.addEventListener('DOMContentLoaded', () => {
+            initCustomCursor();
+            initMagneticEffect();
+            initParticles();
+            initSmoothScroll();
+            initParallax();
+            initCardTilt();
+        });
+
+        // Custom Cursor
+        function initCustomCursor() {
+            const cursor = document.querySelector('.mouse-cursor');
+            const cursorInner = document.querySelector('.mouse-cursor-inner');
+            
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
+                cursorInner.style.transform = `translate(${e.clientX - 4}px, ${e.clientY - 4}px)`;
+            });
+
+            document.addEventListener('mousedown', () => {
+                cursor.style.transform += ' scale(0.7)';
+                cursorInner.style.transform += ' scale(0.7)';
+            });
+
+            document.addEventListener('mouseup', () => {
+                cursor.style.transform = cursor.style.transform.replace(' scale(0.7)', '');
+                cursorInner.style.transform = cursorInner.style.transform.replace(' scale(0.7)', '');
+            });
+        }
+
+        // Magnetic Effect for Social Links
+        function initMagneticEffect() {
+            document.querySelectorAll('.social-link').forEach(link => {
+                link.addEventListener('mousemove', (e) => {
+                    const bounds = link.getBoundingClientRect();
+                    const mouseX = e.clientX - bounds.left;
+                    const mouseY = e.clientY - bounds.top;
+                    const centerX = bounds.width / 2;
+                    const centerY = bounds.height / 2;
+                    
+                    const moveX = (mouseX - centerX) / 10;
+                    const moveY = (mouseY - centerY) / 10;
+                    
+                    link.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.2)`;
+                });
+
+                link.addEventListener('mouseleave', () => {
+                    link.style.transform = '';
+                });
+            });
+        }
+
+        // Particles Background
+        function initParticles() {
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: '#6366f1' },
+                    shape: { type: 'circle' },
+                    opacity: { value: 0.5, random: false },
+                    size: { value: 3, random: true },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#6366f1',
+                        opacity: 0.2,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2,
+                        direction: 'none',
+                        random: false,
+                        straight: false,
+                        out_mode: 'out',
+                        bounce: false
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: { enable: true, mode: 'grab' },
+                        onclick: { enable: true, mode: 'push' },
+                        resize: true
+                    },
+                    modes: {
+                        grab: { distance: 140, line_linked: { opacity: 0.5 } },
+                        push: { particles_nb: 4 }
+                    }
+                },
+                retina_detect: true
+            });
+        }
+
+        // Smooth Scroll with Offset
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const offset = 100;
+                    const target = document.querySelector(this.getAttribute('href'));
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        }
+
+        // Parallax Effect for Hero Section
+        function initParallax() {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const heroSection = document.querySelector('.hero-section');
+                if (heroSection) {
+                    heroSection.style.backgroundPositionY = scrolled * 0.5 + 'px';
+                }
+            });
+        }
+
+        // Interactive Cards Tilt Effect
+        function initCardTilt() {
+            document.querySelectorAll('.team-member, .pricing-card, .blog-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const bounds = card.getBoundingClientRect();
+                    const mouseX = e.clientX - bounds.left;
+                    const mouseY = e.clientY - bounds.top;
+                    const centerX = bounds.width / 2;
+                    const centerY = bounds.height / 2;
+                    
+                    const rotateX = (mouseY - centerY) / 20;
+                    const rotateY = (centerX - mouseX) / 20;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                });
+            });
+        }
+    </script>
+
+    <!-- Add this right after the body tag -->
+    <div class="audio-player-container">
+        <button class="audio-control" id="playPauseBtn" aria-label="Play/Pause">
+            <i class="fas fa-play" id="playPauseIcon"></i>
+        </button>
+        <div class="audio-info">Background Music</div>
+        <input type="range" class="volume-control" id="volumeSlider" min="0" max="1" step="0.1" value="0.5">
+        <audio id="bgMusic" loop>
+            <source src="music/background-music.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Add this at the end of the body, just before the closing body tag -->
+    <script>
+        // Background Music Controls
+        const bgMusic = document.getElementById('bgMusic');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const playPauseIcon = document.getElementById('playPauseIcon');
+        const volumeSlider = document.getElementById('volumeSlider');
+
+        // Set initial volume
+        bgMusic.volume = volumeSlider.value;
+
+        // Play/Pause functionality
+        playPauseBtn.addEventListener('click', () => {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                playPauseIcon.className = 'fas fa-pause';
+            } else {
+                bgMusic.pause();
+                playPauseIcon.className = 'fas fa-play';
+            }
+        });
+
+        // Volume control
+        volumeSlider.addEventListener('input', (e) => {
+            bgMusic.volume = e.target.value;
+        });
+
+        // Handle autoplay restrictions
+        document.addEventListener('click', () => {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                playPauseIcon.className = 'fas fa-pause';
+            }
+        }, { once: true });
     </script>
 </body>
 </html>
